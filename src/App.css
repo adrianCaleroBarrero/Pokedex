@@ -1,27 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   list-style: none;
+  font-family: 'Silkscreen', cursive;
+  color: #1d3557;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-}
-
-ul {
-  padding: 0;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-
-
-}
-
-li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-
+  background-color: #a8dadc;
 }

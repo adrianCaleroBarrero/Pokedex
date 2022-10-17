@@ -1,0 +1,38 @@
+.my-team {
+  display: grid;
+  grid-template-columns: auto auto;
+  .myTeamCard {
+    display: flex;
+    justify-content: space-around;
+    height: 25vh;
+    margin: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    -webkit-box-shadow: 7px 6px 24px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 6px 24px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 6px 24px -4px rgba(0, 0, 0, 0.75);
+    img {
+      width: 30%;
+    }
+    .myTeamCard-info {
+      h3 {
+        font-size: medium;
+      }
+      .life {
+        height: 0.9rem;
+        width: 130%;
+        background-color: green;
+        border: 1px solid black;
+        border-radius: 8px;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 60%;
+      }
+    }
+  }
+}
