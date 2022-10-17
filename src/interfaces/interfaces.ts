@@ -13,6 +13,7 @@ export interface iData {
 export interface iStore {
   pokemon: iOnePokemon[];
   url: string;
+  team: iOnePokemon[];
 }
 
 export interface iOnePokemon {
@@ -21,14 +22,11 @@ export interface iOnePokemon {
   name: string;
   weight: number;
   sprites: {
-    versions: {
-      "generation-v": {
-        "black-white": {
-          animated: { front_default: string };
-        };
-      };
-    };
+    other: { 'official-artwork': { front_default: string } };
+    front_default: string;
   };
+  stats: [{ base_stat: number; stat: { name: string } }];
+  types: [{ type: { name: string } }];
 }
 
 export interface iPokemonStore {
@@ -37,4 +35,12 @@ export interface iPokemonStore {
   name: string;
   weight: number;
   img: string;
+}
+
+export interface iStat {
+  stat: { name: string };
+  base_stat: number;
+}
+export interface iLocation {
+  state: iOnePokemon;
 }
