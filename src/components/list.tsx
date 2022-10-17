@@ -36,10 +36,10 @@ export function List() {
       </ul>
       <div className="pages-button">
         <button onClick={handleBack}>
-          <img src="/img/back.png" alt="back" />
+          <img src="/img/back.png" alt="back-button" />
         </button>
         <button onClick={handleNext}>
-          <img src="/img/next.png" alt="next" />
+          <img src="/img/next.png" alt="next-button" />
         </button>
       </div>
     </>
