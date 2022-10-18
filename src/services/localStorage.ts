@@ -8,7 +8,7 @@ export class LocalStorage {
   getItem() {
     const item = localStorage.getItem('favorite')
       ? JSON.parse(localStorage.getItem('favorite') as string)
-      : null;
+      : [];
     return item;
   }
 
