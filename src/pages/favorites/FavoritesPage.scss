@@ -36,3 +36,24 @@
     }
   }
 }
+@media only screen and (max-width: 600px) {
+  .my-team {
+    grid-template-columns: auto;
+
+    .myTeamCard {
+      img{
+        width: 40%;
+      }
+      .myTeamCard-info {
+        width: 30%;
+      }
+
+      button {
+        img {
+          width: 45%;
+        }
+      }
+    }
+
+  }
+}

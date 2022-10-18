@@ -16,7 +16,6 @@ export default function CardFavorite({ pokemon }: { pokemon: iOnePokemon }) {
     localStorage.setItem(newTeam);
     dispatch(ac.loadTeamAction(newTeam));
   }
-  console.log(myFavoritesPokemons);
 
   return (
     <div className="myTeamCard">

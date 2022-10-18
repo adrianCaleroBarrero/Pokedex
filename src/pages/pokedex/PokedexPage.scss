@@ -4,17 +4,17 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     gap: 8%;
-    .title{
+    .title {
       width: 50%;
     }
-    a{
+    a {
       display: flex;
       align-items: center;
       justify-content: center;
-      img{
+      img {
         width: 43%;
       }
-      
+
       width: 20%;
     }
   }
@@ -33,7 +33,7 @@ body {
       background: none;
       border: none;
       cursor: pointer;
-      img{
+      img {
         width: 4rem;
       }
     }
@@ -55,7 +55,7 @@ body {
       img {
         width: 4rem;
       }
-      p{
+      p {
         margin-bottom: 0;
       }
     }
@@ -68,6 +68,43 @@ body {
       background: none;
       border: none;
       cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    header {
+      .title {
+        img {
+          width: 90%;
+        }
+      }
+      a {
+        img {
+          width: 75%;
+          margin-right: 1rem;
+        }
+      }
+    }
+    form {
+      gap: 5%;
+      input {
+        width: 60%;
+      }
+      button {
+        img {
+          width: 60%;
+        }
+      }
+    }
+    ul {
+      grid-template-columns: auto auto;
+      li {
+        img {
+          width: 40%;
+        }
+      }
     }
   }
 }
