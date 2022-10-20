@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { iLocation, iStat } from '../interfaces/interfaces';
+import { iLocation, iOnePokemon, iStat } from '../interfaces/interfaces';
 import { LocalStorage } from '../services/localStorage';
 
 export default function CardDetail() {
   const location: iLocation = useLocation();
   const navigate = useNavigate();
   const localStorage = new LocalStorage();
+  const [open, setOpen] = useState(false);
   const team = localStorage.getItem();
 
   function handleClick() {
@@ -14,8 +15,22 @@ export default function CardDetail() {
   }
 
   function handleAdd() {
-    team.push(location.state);
-    localStorage.setItem(team);
+    try {
+      if (
+        !team.some(
+          (pokemon: iOnePokemon) => pokemon.name === location.state.name
+        )
+      ) {
+        team.push(location.state);
+        localStorage.setItem(team);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 1000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -51,6 +66,12 @@ export default function CardDetail() {
           </div>
         </div>
       </div>
+      <dialog open={open}>
+        <div className="add">
+          <img src="/img/check.png" alt="check" />
+          <h3>Added!</h3>
+        </div>
+      </dialog>
     </section>
   );
 }
