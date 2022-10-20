@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { iLocation, iStat } from '../interfaces/interfaces';
+import { iLocation, iOnePokemon, iStat } from '../interfaces/interfaces';
 import { LocalStorage } from '../services/localStorage';
 
 export default function CardDetail() {
@@ -15,12 +15,22 @@ export default function CardDetail() {
   }
 
   function handleAdd() {
-    team.push(location.state);
-    localStorage.setItem(team);
-    setOpen(true);
-    setTimeout(() => {
-      setOpen(false);
-    }, 1000);
+    try {
+      if (
+        !team.some(
+          (pokemon: iOnePokemon) => pokemon.name === location.state.name
+        )
+      ) {
+        team.push(location.state);
+        localStorage.setItem(team);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 1000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
