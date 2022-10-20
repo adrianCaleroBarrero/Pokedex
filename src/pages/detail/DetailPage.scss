@@ -52,6 +52,7 @@
     cursor: pointer;
   }
   dialog{
+    width: 20%;
     .add{
       display: flex;
       flex-direction: column;
@@ -66,6 +67,9 @@
   .card {
     .a-box {
       width: 90%;
+    }
+    dialog{
+      width: 60%;
     }
   }
 }
